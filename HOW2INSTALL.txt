@@ -1,0 +1,113 @@
+0. Xóa môi trường cũ:
+deactivate
+conda remove -n mmdet --all -y
+
+1. Tạo môi trường:
+conda create -n mmdet python=3.10 -y
+Chỉ dùng 3.10 chứ cao hơn là không tương thích
+
+2. active môi trường:
+activate mmdet 
+
+3. Kiểm tra cuda trước khi cài:
+nvidia-smi
+Kết quả: 12.6 (không sao)
+
+4. Vì bản mmcv 2.2.0 chỉ dành cho: Windows + cuda 12.1 + torch 2.3.x. Nên cài pytorch==2.4.0 và cuda=12.1:
+conda install pytorch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 pytorch-cuda=12.1 -c pytorch -c nvidia
+
+5. Check torch và cuda: 
+python -c "import torch;print(torch.__version__);print(torch.version.cuda)"
+Kết quả: 
+2.3.1
+12.1
+
+6. Cài mim
+pip install -U openmim
+
+7. Cài mmengine:
+mim install mmengine
+
+8. Check version của mmengine, vì tí nữa khi cài mmdet sẽ yêu cầu version maximum của mmengine là 1.0 mà thôi.
+C:\Users\VU\anaconda3\envs\mmdet\Lib\site-packages\mmengine
+Open: __version__ = '0.10.7'
+Kết quả: OK
+
+9. Cài mmcv (bản 2.2.0)
+Log trang này: https://mmcv.readthedocs.io/en/latest/get_started/installation.html
+Tìm đến phần hướng dẫn: Install with Pip:
+Windows + cuda 12.1 + torch 2.3.x.
+Copy và run: 
+pip install mmcv==2.2.0 -f https://download.openmmlab.com/mmcv/dist/cu121/torch2.3/index.html
+
+10. Kiểm tra version của mmcv: 
+Truy cập địa chỉ: C:\Users\VU\anaconda3\envs\mmdet\Lib\site-packages\mmcv
+__version__ = '2.2.0'
+Kết quả: OK
+
+
+11. Cài mmdet 3.x: https://github.com/open-mmlab/mmdetection/tree/3.x
+git clone https://github.com/open-mmlab/mmdetection.git
+
+12. Sửa file: C:\Users\VU\Documents\OBD\mmdetection\mmdet\init.py
+Thay đổi version của: mmcv_maximum_version = '2.3.0' (từ 2.1.0 thành 2.3.0: bao gồm cả 2.2.0)
+
+13. Cài mmdet3.3.0
+cd mmdetection
+pip install --no-build-isolation -v .
+
+14. Kiểm tra "Nhân" và DLL (Bước quyết định), tránh lỗi DLL load failed, chúng ta sẽ kiểm tra xem file đã nằm đúng chỗ chưa:
+(mmdet) C:\Users\VU\Documents\OBD\mmdetection>dir %CONDA_PREFIX%\Lib\site-packages\mmcv\_ext*
+Directory of C:\Users\VU\anaconda3\envs\mmdet\Lib\site-packages\mmcv
+12/30/2025  10:01 PM       150,584,320 _ext.cp310-win_amd64.pyd
+Kết quả: OK
+
+15. Kiểm tra mmcv:
+python -c "import torch; import mmcv; print(f'Torch: {torch.__version__}'); print(f'MMCV: {mmcv.__version__}')"
+Kết quả:
+Torch: 2.3.1
+MMCV: 2.2.0
+
+16. Viết file check.py để kiểm tra quá trình cài đặt cho mmdet:
+import torch
+
+try:
+    import mmcv
+    from mmcv.ops import roi_align
+    import mmdet
+    print("---------------------------------------")
+    print("THANH CONG! Nhân _ext đã được nạp.")
+    print(f"Torch version: {torch.__version__}")
+    print(f"MMCV version: {mmcv.__version__}")
+    print(f"MMDet version: {mmdet.__version__}")
+except ImportError as e:
+    print(f"Van loi DLL: {e}")
+	
+Kết quả: 
+THANH CONG! Nhân _ext đã được nạp.
+Torch version: 2.3.1
+MMCV version: 2.2.0
+MMDet version: 3.3.0
+
+
+17. Demo:
+mim download mmdet --config rtmdet_tiny_8xb32-300e_coco --dest .
+python demo/image_demo.py demo/demo.jpg rtmdet_tiny_8xb32-300e_coco.py --weights rtmdet_tiny_8xb32-300e_coco_20220902_112414-78e30dcc.pth --device cpu
+
+-weights rtmdet_tiny_8xb32-300e_coco_20220902_112414-78e30dcc.pth --device cpu
+Loads checkpoint by local backend from path: rtmdet_tiny_8xb32-300e_coco_20220902_112414-78e30dcc.pth
+The model and loaded state dict do not match exactly
+
+unexpected key in source state_dict: data_preprocessor.mean, data_preprocessor.std
+
+12/30 22:29:29 - mmengine - WARNING - Failed to search registry with scope "mmdet" in the "function" registry tree. As a workaround, the current "function" registry in "mmengine" is used to build instance. This may cause unexpected failure when running the built modules. Please check whether "mmdet" is a correct scope, or whether the registry is initialized.
+C:\Users\VU\anaconda3\envs\mmdet\lib\site-packages\mmengine\visualization\visualizer.py:196: UserWarning: Failed to add <class 'mmengine.visualization.vis_backend.LocalVisBackend'>, please provide the `save_dir` argument.
+  warnings.warn(f'Failed to add {vis_backend.__class__}, '
+C:\Users\VU\anaconda3\envs\mmdet\lib\site-packages\torch\functional.py:512: UserWarning: torch.meshgrid: in an upcoming
+release, it will be required to pass the indexing argument. (Triggered internally at
+C:\cb\pytorch_1000000000000\work\aten\src\ATen\native\TensorShape.cpp:3588.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+Inference ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+results have been saved at outputs
+
+
