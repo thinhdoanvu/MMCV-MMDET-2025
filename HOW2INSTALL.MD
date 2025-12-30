@@ -229,6 +229,9 @@ python demo/image_demo.py demo/demo.jpg rtmdet_tiny_8xb32-300e_coco.py --weights
 - Cảnh báo `unexpected key in state_dict` là **bình thường**
 - Cảnh báo registry / visualization **không ảnh hưởng inference**
 - Kết quả được lưu trong thư mục `outputs/`
+## Kết quả Demo
+
+![Kết quả chạy thử](https://github.com/thinhdoanvu/MMCV-MMDET-2025/blob/main/imgs/demo.jpg)
 
 ---
 
