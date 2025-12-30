@@ -9,7 +9,7 @@
   ---
 
  📖 HƯỚNG DẪN CÀI ĐẶT CHI TIẾT TẠI ĐÂY:
-  👉 [**HOW2INSTALL.txt**](https://github.com/thinhdoanvu/MMCV-MMDET-2025/blob/main/HOW2INSTALL.txt) 👈
+  👉 [**HOW2INSTALL.txt**]([https://github.com/thinhdoanvu/MMCV-MMDET-2025/blob/main/HOW2INSTALL.txt](https://github.com/thinhdoanvu/MMCV-MMDET-2025/blob/main/HOW2INSTALL.MD)) 👈
 
   ---
   </div>
