@@ -131,6 +131,7 @@ Kết quả:
 
 ```bash
 git clone https://github.com/open-mmlab/mmdetection.git
+hoặc từ đây: https://github.com/thinhdoanvu/MMCV-MMDET-2025.git
 ```
 
 ---
@@ -177,6 +178,11 @@ _ext.cp310-win_amd64.pyd
 
 ```bash
 python -c "import torch, mmcv; print(torch.__version__); print(mmcv.__version__)"
+```
+Kết quả mong đợi:
+```
+Torch: 2.3.1
+MMCV: 2.2.0
 ```
 
 ---
