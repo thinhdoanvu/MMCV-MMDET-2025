@@ -1,4 +1,20 @@
 <div align="center">
+🚀 MMDetection 3.x Windows Fixed (2025) 🚀
+
+  [![PyTorch](https://img.shields.io/badge/PyTorch-2.3%20%7C-ee4c2c?logo=pytorch&logoColor=white)](https://pytorch.org/get-started/locally/)
+  [![CUDA](https://img.shields.io/badge/CUDA-12.1%20%7C-76b900?logo=nvidia&logoColor=white)](https://developer.nvidia.com/cuda-downloads)
+  [![Platform](https://img.shields.io/badge/Platform-Windows-0078d7?logo=windows&logoColor=white)](https://www.microsoft.com/en-us/windows)
+  [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+  ---
+
+ 📖 HƯỚNG DẪN CÀI ĐẶT CHI TIẾT TẠI ĐÂY:
+  👉 [**HOW2INSTALL.txt**](https://github.com/thinhdoanvu/MMCV-MMDET-2025/blob/main/HOW2INSTALL.txt) 👈
+
+  ---
+  </div>
+
+<div align="center">
   <img src="resources/mmdet-logo.png" width="600"/>
   <div>&nbsp;</div>
   <div align="center">
