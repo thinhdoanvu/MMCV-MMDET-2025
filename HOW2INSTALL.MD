@@ -21,3 +21,15 @@ conda remove -n mmdet --all -y
 # Tạo môi trường mới (Chỉ dùng Python 3.10 để đạt độ tương thích cao nhất)
 conda create -n mmdet python=3.10 -y
 conda activate mmdet
+
+### 2. Cài đặt nhân PyTorch & CUDA Runtime
+Sử dụng bộ đôi ổn định nhất cho Windows: Torch 2.3.1 + CUDA 12.1.
+# Kiểm tra CUDA Driver trước
+nvidia-smi
+
+# Cài đặt PyTorch và CUDA toolkit tương ứng
+conda install pytorch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 pytorch-cuda=12.1 -c pytorch -c nvidia
+
+# Kiểm tra kết quả cài đặt
+python -c "import torch;print(torch.__version__);print(torch.version.cuda)"
+# Kết quả mong muốn: 2.3.1 và 12.1
