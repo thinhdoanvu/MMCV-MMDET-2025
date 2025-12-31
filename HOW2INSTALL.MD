@@ -3,6 +3,10 @@
 Tài liệu này mô tả **quy trình cài đặt MMDetection 3.3.0 trên Windows** với CUDA 12.1, PyTorch 2.3.x và MMCV 2.2.0.  
 Quy trình đã được **kiểm chứng thành công**, bao gồm kiểm tra nhân `_ext` để tránh lỗi `DLL load failed`.
 
+Nguyên nhân: 
+
+https://mmcv.readthedocs.io/en/latest/get_started/installation.html 
+
 ---
 
 ## 0. Xóa môi trường cũ (nếu có)
