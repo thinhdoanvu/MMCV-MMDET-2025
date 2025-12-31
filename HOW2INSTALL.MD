@@ -148,6 +148,11 @@ mmdetection/mmdet/__init__.py
 
 Sửa:
 ```python
+mmcv_maximum_version = '2.1.0'
+```
+
+Thành:
+```python
 mmcv_maximum_version = '2.3.0'
 ```
 
