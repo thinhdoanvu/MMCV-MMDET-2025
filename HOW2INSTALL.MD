@@ -98,7 +98,7 @@ mim install mmengine
 
 File:
 ```
-%CONDA_PREFIX%\Lib\site-packages\mmengine\__init__.py
+dir %CONDA_PREFIX%\Lib\site-packages\mmengine\__init__.py
 ```
 
 ```python
