@@ -6,7 +6,8 @@ Quy trình đã được **kiểm chứng thành công**, bao gồm kiểm tra n
 Nguyên nhân: 
 https://mmcv.readthedocs.io/en/latest/get_started/installation.html   
 
-![Yêu cầu CUDA và Pytorch] (https://github.com/thinhdoanvu/MMCV-MMDET-2025/blob/main/imgs/requirement%20for%20CUDA%20and%20Pytorch.png)
+https://mmcv.readthedocs.io/en/latest/get_started/installation.html 
+![Yêu cầu CUDA và Pytorch](https://github.com/thinhdoanvu/MMCV-MMDET-2025/blob/main/imgs/requirement%20for%20CUDA%20and%20Pytorch.png)
 ---
 
 ## 0. Cài đặt Python 3.10 trong trường hợp GPU SERVER ĐÃ CÓ PYTHON 3.12
