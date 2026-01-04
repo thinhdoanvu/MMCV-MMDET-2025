@@ -83,7 +83,7 @@ https://mmcv.readthedocs.io/en/latest/get_started/installation.html
 
 
 ```bash
-pip install mmcv==2.2.0 -f https://download.openmmlab.com/mmcv/dist/cu121/torch2.4/index.html
+python -m pip install torch==2.4.0+cu121 torchvision==0.19.0+cu121 torchaudio==2.4.0 --index-url https://download.pytorch.org/whl/cu121
 ```
 
 ---
@@ -94,9 +94,9 @@ pip install mmcv==2.2.0 -f https://download.openmmlab.com/mmcv/dist/cu121/torch2
 python -c 'import torch; print(torch.__version__); print(torch.version.cuda)'
 ```
 
-Kết quả mong đợi:
-```
-2.3.1
+✔️ Kết quả mong đợi:
+```bash
+2.4.0+cu121
 12.1
 ```
 
@@ -118,22 +118,7 @@ mim install mmengine
 
 ---
 
-## 8. Kiểm tra MMEngine
-
-File:
-```
-dir %CONDA_PREFIX%\Lib\site-packages\mmengine\__init__.py
-```
-
-```python
-__version__ = '0.10.7'
-```
-
-✔️ Đạt yêu cầu (MMDet 3.x yêu cầu `<1.0.0`)
-
----
-
-## 9. Cài MMCV 2.2.0
+## 8. Cài MMCV 2.2.0
 
 ```bash
 pip install mmcv==2.2.0 -f https://download.openmmlab.com/mmcv/dist/cu121/torch2.3/index.html
@@ -141,29 +126,29 @@ pip install mmcv==2.2.0 -f https://download.openmmlab.com/mmcv/dist/cu121/torch2
 
 ---
 
-## 10. Kiểm tra MMCV
+## 9. Kiểm tra MMCV
 
 ```bash
 python -c "import mmcv; print(mmcv.__version__)"
 ```
 
-Kết quả:
+✔️ Kết quả:
 ```
 2.2.0
 ```
 
 ---
 
-## 11. Clone MMDetection 3.x
+## 10. Clone MMDetection 3.x
 
 ```bash
 git clone https://github.com/open-mmlab/mmdetection.git
-hoặc từ đây: https://github.com/thinhdoanvu/MMCV-MMDET-2025.git
+hoặc từ đây: git clone https://github.com/thinhdoanvu/MMCV-MMDET-2025.git
 ```
 
 ---
 
-## 12. Sửa giới hạn phiên bản MMCV
+## 11. Sửa giới hạn phiên bản MMCV
 
 File:
 ```
@@ -182,7 +167,7 @@ mmcv_maximum_version = '2.3.0'
 
 ---
 
-## 13. Cài MMDetection 3.3.0
+## 12. Cài MMDetection 3.3.0
 
 ```bash
 cd mmdetection
@@ -191,35 +176,20 @@ pip install --no-build-isolation -v .
 
 ---
 
-## 14. Kiểm tra nhân `_ext` (Bước quan trọng)
+## 13. Kiểm tra import MMCV
 
 ```bash
-dir %CONDA_PREFIX%\Lib\site-packages\mmcv\_ext*
+python -c 'import torch, mmcv; print(torch.__version__); print(mmcv.__version__)'
 ```
-
-Kết quả mong đợi:
+✔️ Kết quả mong đợi:
 ```
-_ext.cp310-win_amd64.pyd
-```
-
-✔️ Nhân đã được build đúng
-
----
-
-## 15. Kiểm tra import MMCV
-
-```bash
-python -c "import torch, mmcv; print(torch.__version__); print(mmcv.__version__)"
-```
-Kết quả mong đợi:
-```
-Torch: 2.3.1
-MMCV: 2.2.0
+2.4.0+cu121
+2.2.0
 ```
 
 ---
 
-## 16. Kiểm tra MMDetection
+## 14. Kiểm tra MMDetection
 
 File `check.py`:
 
@@ -239,7 +209,7 @@ except ImportError as e:
     print(f"Lỗi DLL: {e}")
 ```
 
-Kết quả:
+✔️ Kết quả:
 ```
 THÀNH CÔNG! Nhân _ext đã được nạp.
 Torch version: 2.3.1
@@ -249,7 +219,7 @@ MMDet version: 3.3.0
 
 ---
 
-## 17. Demo inference
+## 15. Demo inference
 
 ```bash
 mim download mmdet --config rtmdet_tiny_8xb32-300e_coco --dest .
