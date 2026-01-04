@@ -9,7 +9,7 @@
   ---
 
  📖 HƯỚNG DẪN CÀI ĐẶT CHI TIẾT TẠI ĐÂY:
-  👉 [**HOW TO INSTALL FOR WINDOWS**](https://github.com/thinhdoanvu/MMCV-MMDET-2025/blob/main/HOW2INSTALL.MD) || [**HOW TO INSTALL FOR H200**](https://github.com/thinhdoanvu/MMCV-MMDET-2025/blob/main/HOW2INSTALL_PythonENV.md) 👈
+  👉 [**WINDOWS + 4090**](https://github.com/thinhdoanvu/MMCV-MMDET-2025/blob/main/HOW2INSTALL.MD) || [**LINUX + H200**](https://github.com/thinhdoanvu/MMCV-MMDET-2025/blob/main/HOW2INSTALL_PythonENV.md) 👈
   ---
   </div>
 
