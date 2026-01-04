@@ -75,9 +75,8 @@ NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 1
 ## 4. Cài đặt PyTorch + CUDA 12.1
 
 MMCV 2.2.0 chỉ hỗ trợ:
-- Windows
-- CUDA 12.1
-- PyTorch 2.3.x
+
+![Yêu cầu]https://github.com/thinhdoanvu/MMCV-MMDET-2025/blob/main/imgs/pytorch_LINUX_H200.png)
 
 ```bash
 conda install pytorch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 pytorch-cuda=12.1 -c pytorch -c nvidia
