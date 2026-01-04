@@ -78,10 +78,12 @@ NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 1
 
 MMCV 2.2.0 chỉ hỗ trợ:
 
-![**Yêu cầu**] (https://github.com/thinhdoanvu/MMCV-MMDET-2025/blob/main/imgs/pytorch_LINUX_H200.png)
+https://mmcv.readthedocs.io/en/latest/get_started/installation.html 
+![Yêu cầu CUDA và Pytorch](https://github.com/thinhdoanvu/MMCV-MMDET-2025/blob/main/imgs/pytorch_LINUX_H200.png)
+
 
 ```bash
-conda install pytorch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 pytorch-cuda=12.1 -c pytorch -c nvidia
+pip install mmcv==2.2.0 -f https://download.openmmlab.com/mmcv/dist/cu121/torch2.4/index.html
 ```
 
 ---
@@ -89,7 +91,7 @@ conda install pytorch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 pytorch-cuda=
 ## 5. Kiểm tra PyTorch
 
 ```bash
-python -c "import torch; print(torch.__version__); print(torch.version.cuda)"
+python -c 'import torch; print(torch.__version__); print(torch.version.cuda)'
 ```
 
 Kết quả mong đợi:
