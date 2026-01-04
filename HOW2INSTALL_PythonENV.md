@@ -4,8 +4,9 @@ Tài liệu này mô tả **quy trình cài đặt MMDetection 3.3.0 trên Windo
 Quy trình đã được **kiểm chứng thành công**, bao gồm kiểm tra nhân `_ext` để tránh lỗi `DLL load failed`.
 
 Nguyên nhân: 
-https://mmcv.readthedocs.io/en/latest/get_started/installation.html 
-![Yêu cầu CUDA và Pytorch](https://github.com/thinhdoanvu/MMCV-MMDET-2025/blob/main/imgs/requirement%20for%20CUDA%20and%20Pytorch.png)
+https://mmcv.readthedocs.io/en/latest/get_started/installation.html   
+
+![Yêu cầu CUDA và Pytorch] (https://github.com/thinhdoanvu/MMCV-MMDET-2025/blob/main/imgs/requirement%20for%20CUDA%20and%20Pytorch.png)
 ---
 
 ## 0. Cài đặt Python 3.10 trong trường hợp GPU SERVER ĐÃ CÓ PYTHON 3.12
@@ -76,7 +77,7 @@ NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 1
 
 MMCV 2.2.0 chỉ hỗ trợ:
 
-![Yêu cầu]https://github.com/thinhdoanvu/MMCV-MMDET-2025/blob/main/imgs/pytorch_LINUX_H200.png)
+![**Yêu cầu**] (https://github.com/thinhdoanvu/MMCV-MMDET-2025/blob/main/imgs/pytorch_LINUX_H200.png)
 
 ```bash
 conda install pytorch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 pytorch-cuda=12.1 -c pytorch -c nvidia
