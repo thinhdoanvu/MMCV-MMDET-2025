@@ -8,7 +8,7 @@ https://mmcv.readthedocs.io/en/latest/get_started/installation.html
 ![Yêu cầu CUDA và Pytorch](https://github.com/thinhdoanvu/MMCV-MMDET-2025/blob/main/imgs/requirement%20for%20CUDA%20and%20Pytorch.png)
 ---
 
-## 0. Cài đặt Python 3.10 trong trường hợp GPU SERVER 3.12
+## 0. Cài đặt Python 3.10 trong trường hợp GPU SERVER ĐÃ CÓ PYTHON 3.12
 
 1️⃣ Cài công cụ cần thiết
 
@@ -32,8 +32,10 @@ sudo apt install python3.10 python3.10-venv python3.10-dev -y
 ```bash
 python3.10 --version
 ```
-
+✔️ Kết quả
+```bash
 Python 3.10.x
+```
 ---
 
 ## 1. Tạo môi trường Conda (Python 3.10)
@@ -50,7 +52,7 @@ conda create -n mmdet python=3.10 -y
 ## 2. Kích hoạt môi trường
 
 ```bash
-activate mmdet
+source mmdet/bin/activate
 ```
 
 ---
@@ -61,12 +63,12 @@ activate mmdet
 nvidia-smi
 ```
 
-Ví dụ:
-```
-CUDA Version: 12.6
+✔️ Ví dụ:
+```bash
+NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0
 ```
 
-> CUDA runtime cao hơn **không ảnh hưởng**, miễn là PyTorch dùng **CUDA 12.1**.
+⚠️ CUDA runtime cao hơn **không ảnh hưởng**, miễn là PyTorch dùng **CUDA 12.1**.
 
 ---
 
