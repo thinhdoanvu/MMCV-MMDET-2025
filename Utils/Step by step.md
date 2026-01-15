@@ -1,11 +1,16 @@
-1. https://github.com/thinhdoanvu/MMCV-MMDET-2025/blob/main/Utils/convert_YOLO_2_COCO.py
-Convert YOLO format to COCO format
-Only images with BB must be used for converting
+#### 1. Convert YOLO format to COCO format  
+Only images with BB must be used for converting  
+```
+https://github.com/thinhdoanvu/MMCV-MMDET-2025/blob/main/Utils/convert_YOLO_2_COCO.py
+```
 
-2. https://github.com/thinhdoanvu/MMCV-MMDET-2025/blob/main/Utils/visualize_bouding_box_COCO.py
-Visualize image with BB from COCO format
+#### 2.Visualize image with BB from COCO format  
+```
+ https://github.com/thinhdoanvu/MMCV-MMDET-2025/blob/main/Utils/visualize_bouding_box_COCO.py
+```
 
-3. Create tree folder as:
+#### 3. Create tree folder as:
+```bash
 C:---\mmdetection3x
          |__data
          |____coco
@@ -14,13 +19,17 @@ C:---\mmdetection3x
          |________instances_val2017.json
          |______images
          |________all images for training and validation stage
+```
 
-4. Create config.py inside config folder
+#### 4. Create config.py inside config folder
+```bash
 C:---\mmdetection3x
       |__configs
       |____config_aicup25_fasterRCNN.py
-Copy contents to config.py:
-===========================================================================================================
+```
+Copy contents to config.py:  
+
+```bash
 _base_ = 'faster_rcnn/faster-rcnn_r50_fpn_1x_coco.py'   #faster-rcnn Resnet: 50
 
 model = dict(
@@ -98,3 +107,14 @@ default_hooks = dict(   # save the best model
 # Set the maximum number of epochs for training
 train_cfg = dict(max_epochs=100)
 runner = dict(type='EpochBasedRunner', max_epochs=100)
+```
+
+#### 5. Model Complexity
+```bash
+python tools\analysis_tools\get_flops.py checkpoints\frcnn_ip102\vis_data\config.py
+```
+-------------------------------------------------------------------------------------------------------
+Compute type: dataloader: load a picture from the dataset  
+Input shape: (480, 640)  
+Flops: 72.629G  
+Params: 41.866M  
