@@ -108,8 +108,13 @@ default_hooks = dict(   # save the best model
 train_cfg = dict(max_epochs=100)
 runner = dict(type='EpochBasedRunner', max_epochs=100)
 ```
+#### 5. Train model
+```bash
+cd mmdetection3x
+python tools\train.py configs\config_aicup25_dino.py --work-dir checkpoints
+```
 
-#### 5. Model Complexity
+#### 6. Model Complexity
 ```bash
 python tools\analysis_tools\get_flops.py checkpoints\frcnn_ip102\vis_data\config.py
 ```
