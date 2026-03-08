@@ -135,12 +135,6 @@ Kết quả:
 ```bash
 git clone https://github.com/open-mmlab/mmdetection.git
 ```
-hoặc 
-```
-git clone https://github.com/thinhdoanvu/MMCV-MMDET-2025.git
-```
-đã chỉnh sửa cấu hình, chỉ việc cài đặt
-```
 
 ---
 
@@ -152,14 +146,20 @@ mmdetection/mmdet/__init__.py
 ```
 
 Sửa:
-```python
+```
 mmcv_maximum_version = '2.1.0'
 ```
 
 Thành:
-```python
+```
 mmcv_maximum_version = '2.3.0'
 ```
+
+## hoặc 11 + 12
+```
+git clone https://github.com/thinhdoanvu/MMCV-MMDET-2025.git
+```
+đã chỉnh sửa cấu hình, chỉ việc cài đặt
 
 ---
 
