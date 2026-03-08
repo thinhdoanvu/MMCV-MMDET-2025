@@ -134,7 +134,9 @@ Kết quả:
 
 ```bash
 git clone https://github.com/open-mmlab/mmdetection.git
-hoặc từ đây: https://github.com/thinhdoanvu/MMCV-MMDET-2025.git
+hoặc 
+git clone https://github.com/thinhdoanvu/MMCV-MMDET-2025.git
+đã chỉnh sửa cấu hình, chỉ việc cài đặt
 ```
 
 ---
