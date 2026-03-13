@@ -46,7 +46,7 @@ Python 3.10.x
 > Python 3.11+ **không tương thích** với MMCV / MMDetection tại thời điểm hiện tại.
 
 ```bash
-conda create -n mmdet python=3.10 -y
+python3 -m venv ~/mmdet
 ```
 
 ---
@@ -54,7 +54,7 @@ conda create -n mmdet python=3.10 -y
 ## 2. Kích hoạt môi trường
 
 ```bash
-source mmdet/bin/activate
+source ~/mmdet/bin/activate
 ```
 
 ---
