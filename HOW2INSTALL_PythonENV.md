@@ -1,6 +1,6 @@
 # MMDetection 3.3.0 Installation Guide (LINUX + CUDA 12.1): H200 GPU SERVER
 
-Tài liệu này mô tả **quy trình cài đặt MMDetection 3.3.0 trên Windows** với CUDA 12.1, PyTorch 2.3.x và MMCV 2.2.0.  
+Tài liệu này mô tả **quy trình cài đặt MMDetection 3.3.0 trên LINUX** với CUDA 12.1, PyTorch 2.3.x và MMCV 2.2.0.  
 Quy trình đã được **kiểm chứng thành công**, bao gồm kiểm tra nhân `_ext` để tránh lỗi `DLL load failed`.
 
 Nguyên nhân: 
