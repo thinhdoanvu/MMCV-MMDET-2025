@@ -46,7 +46,7 @@ Python 3.10.x
 > Python 3.11+ **không tương thích** với MMCV / MMDetection tại thời điểm hiện tại.
 
 ```bash
-python3 -m venv ~/mmdet
+python3.10 -m venv ~/mmdet
 ```
 
 ---
